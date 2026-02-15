@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* GridScan background - make it visible and fixed */
+#root > canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure content is above background */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient text for all h1 and h2 elements */
+h1 {
+  background-image: 
+    linear-gradient(
+      110deg,
+      #fa4ba3 0%, 
+      #fa4ba3 45%, 
+      #ffffff 50%, 
+      #fa4ba3 55%, 
+      #fa4ba3 100%
+    );
+    
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  display: inline-block;
+  animation: shine-and-bubbles 4s linear infinite;
+  
+  /* لمعان إضافي خلف النص */
+  filter: drop-shadow(0 0 5px rgba(255, 0, 128, 0.3));
+}
+
+@keyframes shine-and-bubbles {
+  0% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+/* Animated gradient for navbar text */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #c084fc 25%,
+    #7c3aed 50%,
+    #c084fc 75%,
+    #7c3aed 100%
+  );
+  background-size: 75% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
