@@ -13,7 +13,7 @@ const Hero = () => {
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
           <motion.div
-            className="mb-4"
+            className="mb-4 mt-8"
             animate={{
               rotate: [0, 360],
               scale: [1, 1.2, 1],
