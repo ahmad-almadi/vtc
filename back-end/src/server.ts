@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 app.use(cors({
-  origin: 'vtc.up.railway.app',
+  origin: 'https://vtc.up.railway.app',
   credentials: true
 }));
 
