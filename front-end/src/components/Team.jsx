@@ -51,7 +51,8 @@ const Team = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(255, 159, 252, 0.3)"
+                boxShadow: "0 20px 40px rgba(255, 159, 252, 0.3)",
+                rotateZ: index % 2 ? -1 : 1,
               }}
             >
               <motion.div 

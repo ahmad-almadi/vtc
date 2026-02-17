@@ -64,7 +64,7 @@ const AboutUs = () => {
             >
               <motion.div
                 animate={{ 
-                  rotate: [0, 360],
+                  // rotate: [0, 360],
                   scale: [1, 1.2, 1]
                 }}
                 transition={{ 

@@ -12,8 +12,8 @@ const Portfolio = () => {
       description: "Modern shopping experience with React & Node.js",
       techStack: ["React", "Node.js", "PostgreSQL", "Stripe"],
       imageUrl: "/images/e-commerce-proj.webp", // Place your image in public/images/
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/vtc/ecommerce",
+      liveUrl: "https://glamora.up.railway.app",
+      githubUrl: "https://github.com/ahmad-almadi/glamora",
     },
     {
       id: 2,
@@ -30,8 +30,8 @@ const Portfolio = () => {
       description: "Creative portfolio with stunning animations",
       techStack: ["React", "Three.js", "Tailwind"],
       imageUrl: "/images/portfolio-proj.webp",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/vtc/portfolio",
+      liveUrl: "https://ahmadalmadi-portfolio.netlify.app",
+      githubUrl: "https://github.com/ahmad-almadi/Portfolio",
     },
     {
       id: 4,
@@ -87,13 +87,13 @@ const Portfolio = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
-                rotateZ: 2,
+                rotateZ: index % 2 === 0 ? -1 : 1, 
                 boxShadow: "0 25px 50px rgba(255, 159, 252, 0.4)",
               }}
               className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden"
