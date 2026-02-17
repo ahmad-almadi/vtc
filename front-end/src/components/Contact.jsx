@@ -16,7 +16,7 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      const response = await fetch('http://vtc-back-end-production.up.railway.app/api/contact', {
+      const response = await fetch('https://vtc-back-end-production.up.railway.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
