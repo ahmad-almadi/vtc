@@ -42,6 +42,15 @@ const Portfolio = () => {
       liveUrl: "https://flowofpurity.com",
       githubUrl: "https://github.com/vtc/portfolio",
     },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      description:
+        "A modern interactive portfolio crafted with stunning visuals and smooth animations",
+      imageUrl: "/images/doctor-proj.webp",
+      liveUrl: "https://doctor-fral.vercel.app",
+      githubUrl: "https://github.com/ahmad-almadi/doctor",
+    },
   ];
 
   const containerVariants = {
@@ -93,7 +102,7 @@ const Portfolio = () => {
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
-                rotateZ: index % 2 === 0 ? -1 : 1, 
+                rotateZ: index % 2 === 0 ? -1 : 1,
                 boxShadow: "0 25px 50px rgba(255, 159, 252, 0.4)",
               }}
               className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden"
