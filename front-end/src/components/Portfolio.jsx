@@ -47,6 +47,7 @@ const Portfolio = () => {
       title: "Portfolio Website",
       description:
         "A modern interactive portfolio crafted with stunning visuals and smooth animations",
+      techStack: ["Next.js", "Vite", "Tailwind"],
       imageUrl: "/images/doctor-proj.webp",
       liveUrl: "https://doctor-fral.vercel.app",
       githubUrl: "https://github.com/ahmad-almadi/doctor",
