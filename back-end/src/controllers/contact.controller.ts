@@ -6,10 +6,9 @@ import { Resend } from 'resend';
 const apiKey = process.env.RESEND_API_KEY;
 
 if (!apiKey) {
-  console.error('❌ RESEND_API_KEY is not set in environment variables!');
+  console.error('RESEND_API_KEY is not set in environment variables!');
 } else {
-  console.log('✅ Resend API Key is configured');
-  console.log('🔑 Key starts with:', apiKey.substring(0, 5) + '...');
+  console.log('Resend API Key is configured');
 }
 
 const resend = new Resend(apiKey);
@@ -18,23 +17,30 @@ export const createContactRequest = async (req: Request, res: Response) => {
   try {
     const { name, email, message } = req.body;
 
-    console.log('� Received contact form submission:', { name, email });
+    console.log('Received contact form submission:', { name, email });
 
     if (!name || !email || !message) {
-      console.log('❌ Validation failed: missing fields');
+      console.log('Validation failed: missing fields');
       return res.status(400).json({ error: 'All fields are required' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      console.log('Invalid email format:', email);
+      return res.status(400).json({ error: 'Please enter a valid email address' });
+    }
+
     // Save to database
-    console.log('💾 Saving to database...');
+    console.log('Saving to database...');
     const contact = await prisma.contactRequest.create({
       data: { name, email, message }
     });
-    console.log('✅ Saved to database with ID:', contact.id);
+    console.log('Saved to database with ID:', contact.id);
 
     // Check if Resend is configured
     if (!apiKey) {
-      console.error('❌ Cannot send email: RESEND_API_KEY not configured');
+      console.error('Cannot send email: RESEND_API_KEY not configured');
       return res.status(201).json({ 
         success: true, 
         data: contact, 
@@ -43,17 +49,15 @@ export const createContactRequest = async (req: Request, res: Response) => {
       });
     }
 
-    console.log('📧 Attempting to send email via Resend...');
-    console.log('📝 From:', name, '(' + email + ')');
-    console.log('📬 To:', process.env.EMAIL_USER || 'ahmadalmadi2005@gmail.com');
+    console.log('Attempting to send email via Resend...');
 
     try {
       // Send email using Resend
-      const emailData = {
-        from: 'VTC Contact Form <onboarding@resend.dev>',
+      const { data, error } = await resend.emails.send({
+        from: 'VTC <onboarding@resend.dev>',
         to: [process.env.EMAIL_USER || 'ahmadalmadi2005@gmail.com'],
         replyTo: email,
-        subject: `🔔 New Contact: ${name}`,
+        subject: `New Contact: ${name}`,
         html: `
           <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
             <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -76,14 +80,10 @@ export const createContactRequest = async (req: Request, res: Response) => {
             </div>
           </div>
         `,
-      };
-
-      console.log('📤 Sending email with data:', JSON.stringify({ ...emailData, html: '[HTML CONTENT]' }));
-
-      const { data, error } = await resend.emails.send(emailData);
+      });
 
       if (error) {
-        console.error('❌ Resend API returned error:', JSON.stringify(error, null, 2));
+        console.error('Resend API returned error:', JSON.stringify(error));
         return res.status(201).json({ 
           success: true, 
           data: contact, 
@@ -93,9 +93,8 @@ export const createContactRequest = async (req: Request, res: Response) => {
         });
       }
 
-      console.log('✅ Email sent successfully via Resend!');
-      console.log('📬 Email ID:', data?.id);
-      console.log('📊 Full response:', JSON.stringify(data, null, 2));
+      console.log('Email sent successfully via Resend!');
+      console.log('Email ID:', data?.id);
       
       res.status(201).json({ 
         success: true, 
@@ -105,10 +104,7 @@ export const createContactRequest = async (req: Request, res: Response) => {
         emailId: data?.id
       });
     } catch (emailError: any) {
-      console.error('❌ Exception while sending email:', emailError);
-      console.error('Error name:', emailError.name);
-      console.error('Error message:', emailError.message);
-      console.error('Error stack:', emailError.stack);
+      console.error('Exception while sending email:', emailError.message);
       
       res.status(201).json({ 
         success: true, 
@@ -119,8 +115,7 @@ export const createContactRequest = async (req: Request, res: Response) => {
       });
     }
   } catch (error: any) {
-    console.error('❌ Contact controller error:', error);
-    console.error('Error details:', error.message);
+    console.error('Contact controller error:', error.message);
     res.status(500).json({ error: 'Failed to submit contact request' });
   }
 };
