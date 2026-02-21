@@ -52,6 +52,16 @@ const Portfolio = () => {
       liveUrl: "https://doctor-fral.vercel.app",
       githubUrl: "https://github.com/ahmad-almadi/doctor",
     },
+    {
+      id: 6,
+      title: "Portfolio Website",
+      description:
+        "An engaging portfolio that blends stunning visuals with smooth, fluid animations.",
+      techStack: ["Next.js", "Three.js", "Tailwind"],
+      imageUrl: "/images/beauty-lounge-proj.webp",
+      liveUrl: "https://beatuty-lounge-production.up.railway.app",
+      githubUrl: "https://github.com/ahmad-almadi/beauty-lounge",
+    },
   ];
 
   const containerVariants = {
