@@ -2,29 +2,55 @@ import { Request, Response } from 'express';
 import { prisma } from '../lib/prisma.js';
 import { Resend } from 'resend';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with validation
+const apiKey = process.env.RESEND_API_KEY;
+
+if (!apiKey) {
+  console.error('❌ RESEND_API_KEY is not set in environment variables!');
+} else {
+  console.log('✅ Resend API Key is configured');
+  console.log('🔑 Key starts with:', apiKey.substring(0, 5) + '...');
+}
+
+const resend = new Resend(apiKey);
 
 export const createContactRequest = async (req: Request, res: Response) => {
   try {
     const { name, email, message } = req.body;
 
+    console.log('� Received contact form submission:', { name, email });
+
     if (!name || !email || !message) {
+      console.log('❌ Validation failed: missing fields');
       return res.status(400).json({ error: 'All fields are required' });
     }
 
     // Save to database
+    console.log('💾 Saving to database...');
     const contact = await prisma.contactRequest.create({
       data: { name, email, message }
     });
+    console.log('✅ Saved to database with ID:', contact.id);
+
+    // Check if Resend is configured
+    if (!apiKey) {
+      console.error('❌ Cannot send email: RESEND_API_KEY not configured');
+      return res.status(201).json({ 
+        success: true, 
+        data: contact, 
+        message: 'Contact saved but email not configured',
+        emailSent: false
+      });
+    }
 
     console.log('📧 Attempting to send email via Resend...');
     console.log('📝 From:', name, '(' + email + ')');
+    console.log('📬 To:', process.env.EMAIL_USER || 'ahmadalmadi2005@gmail.com');
 
     try {
       // Send email using Resend
-      const { data, error } = await resend.emails.send({
-        from: 'VTC Contact Form <onboarding@resend.dev>', // Use your verified domain or resend's test domain
+      const emailData = {
+        from: 'VTC Contact Form <onboarding@resend.dev>',
         to: [process.env.EMAIL_USER || 'ahmadalmadi2005@gmail.com'],
         replyTo: email,
         subject: `🔔 New Contact: ${name}`,
@@ -50,30 +76,39 @@ export const createContactRequest = async (req: Request, res: Response) => {
             </div>
           </div>
         `,
-      });
+      };
+
+      console.log('📤 Sending email with data:', JSON.stringify({ ...emailData, html: '[HTML CONTENT]' }));
+
+      const { data, error } = await resend.emails.send(emailData);
 
       if (error) {
-        console.error('❌ Resend error:', error);
+        console.error('❌ Resend API returned error:', JSON.stringify(error, null, 2));
         return res.status(201).json({ 
           success: true, 
           data: contact, 
           message: 'Contact request submitted but email failed to send',
           emailSent: false,
-          emailError: error.message
+          emailError: error.message || JSON.stringify(error)
         });
       }
 
       console.log('✅ Email sent successfully via Resend!');
       console.log('📬 Email ID:', data?.id);
+      console.log('📊 Full response:', JSON.stringify(data, null, 2));
       
       res.status(201).json({ 
         success: true, 
         data: contact, 
         message: 'Contact request submitted and email sent successfully',
-        emailSent: true
+        emailSent: true,
+        emailId: data?.id
       });
     } catch (emailError: any) {
-      console.error('❌ Email sending failed:', emailError);
+      console.error('❌ Exception while sending email:', emailError);
+      console.error('Error name:', emailError.name);
+      console.error('Error message:', emailError.message);
+      console.error('Error stack:', emailError.stack);
       
       res.status(201).json({ 
         success: true, 
@@ -83,8 +118,9 @@ export const createContactRequest = async (req: Request, res: Response) => {
         emailError: emailError.message
       });
     }
-  } catch (error) {
-    console.error('❌ Contact error:', error);
+  } catch (error: any) {
+    console.error('❌ Contact controller error:', error);
+    console.error('Error details:', error.message);
     res.status(500).json({ error: 'Failed to submit contact request' });
   }
 };
