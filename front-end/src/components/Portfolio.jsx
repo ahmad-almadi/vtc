@@ -4,7 +4,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 
 const Portfolio = () => {
-  // Static projects data
+  // Static projects data - Updated with 6 projects
   const projects = [
     {
       id: 1,
