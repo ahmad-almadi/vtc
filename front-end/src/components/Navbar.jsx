@@ -37,26 +37,24 @@ const Navbar = () => {
               src="/images/vtc-logo.avif"
               alt="VTC Logo"
               className="w-12 h-12 rounded-full"
-              animate={{
-                filter: [
-                  "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))",
-                  "drop-shadow(0 0 16px rgba(255, 159, 252, 0.8))",
-                  "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))",
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              // animate={{
+              //   filter: [
+              //     "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))",
+              //     "drop-shadow(0 0 16px rgba(255, 159, 252, 0.8))",
+              //     "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))",
+              //   ],
+              // }}
+              // transition={{
+              //   duration: 2,
+              //   repeat: Infinity,
+              //   ease: "easeInOut",
+              // }}
             />
             <div className="hidden sm:block">
               <div className="text-xl font-bold  bg-gradient-to-r from-vtc-neon to-purple-400 bg-clip-text text-transparent">
                 VTC
               </div>
-              <div className="text-xs bg-gradient-to-r from-vtc-neon to-purple-400 bg-clip-text text-transparent">
-                Web Development
-              </div>
+             
             </div>
           </motion.a>
 

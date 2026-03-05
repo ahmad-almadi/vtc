@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
-      <div className="max-w-6xl mx-auto text-center z-10">
+    <section className="relative min-h-screen flex items-center justify-center px-4" style={{ zIndex: 10 }}>
+      <div className="max-w-6xl mx-auto text-center" style={{ position: 'relative', zIndex: 10 }}>
         <motion.div
           className="flex flex-col items-center justify-center mb-6"
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-          <motion.div
+          {/* <motion.div
             className="mb-4 mt-8"
             animate={{
               rotate: [0, 360],
@@ -28,12 +28,12 @@ const Hero = () => {
               icon={faCode}
               className="w-16 h-16 text-vtc-neon"
             />
-          </motion.div>
+          </motion.div> */}
           <motion.h1
             className="text-6xl md:text-8xl font-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 1.3 }}
           >
             VTC
           </motion.h1>

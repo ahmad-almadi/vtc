@@ -76,7 +76,7 @@ const Team = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: 0.11 }}
               whileHover={{ 
                 scale: 1.05,
                 borderColor: '#FF9FFC',
@@ -86,7 +86,7 @@ const Team = () => {
               {/* Icon Avatar */}
               <motion.div
                 className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-vtc-neon to-purple-500 rounded-full flex items-center justify-center"
-                whileHover={{ rotate: 360 }}
+                // whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
                 <FontAwesomeIcon icon={faUser} className="w-10 h-10 text-white" />
@@ -102,7 +102,7 @@ const Team = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-vtc-neon transition-colors"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
@@ -112,7 +112,7 @@ const Team = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-vtc-neon transition-colors"
-                  whileHover={{ scale: 1.2, rotate: -5 }}
+                  whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />

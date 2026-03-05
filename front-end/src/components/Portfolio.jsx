@@ -56,11 +56,21 @@ const Portfolio = () => {
       id: 6,
       title: "Portfolio Website",
       description:
-        "An engaging portfolio that blends stunning visuals with smooth, fluid animations.",
+        "An engaging portfolio that blends stunning visuals with smooth, fluid animations",
       techStack: ["Next.js", "Three.js", "Tailwind"],
       imageUrl: "/images/beauty-lounge-proj.webp",
       liveUrl: "https://beatuty-lounge-production.up.railway.app",
       githubUrl: "https://github.com/ahmad-almadi/beauty-lounge",
+    },
+    {
+      id: 7,
+      title: "Portfolio Website",
+      description:
+        "An interactive portfolio experience that merges eye-catching visuals with beautifully smooth, fluid animations",
+      techStack: ["Next.js", "Three.js", "Tailwind"],
+      imageUrl: "/images/dental.webp",
+      liveUrl: "https://dental-one-rho.vercel.app",
+      githubUrl: "https://github.com/ahmad-almadi/dental",
     },
   ];
 
@@ -113,7 +123,7 @@ const Portfolio = () => {
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
-                rotateZ: index % 2 === 0 ? -1 : 1,
+                // rotateZ: index % 2 === 0 ? -1 : 1,
                 boxShadow: "0 25px 50px rgba(255, 159, 252, 0.4)",
               }}
               className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden"

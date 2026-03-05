@@ -1,5 +1,6 @@
 import GridScan from "./bg/GridScan";
 import Lightning from "./bg/Lightning";
+import LightRays from './bg/LightRays';
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,39 +14,44 @@ import "./global.css";
 
 function App() {
   return (
-    <div style={{ position: "relative", width: "100%", minHeight: "100vh" }}>
-      {/* GridScan Background - Fixed position */}
-      {/* <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-        <GridScan
-          sensitivity={0.55}
-          lineThickness={1}
-          linesColor="#392e4e"
-          gridScale={0.1}
-          scanColor="#FF9FFC"
-          scanOpacity={0.4}
-          enablePost
-          bloomIntensity={0.6}
-          chromaticAberration={0.002}
-          noiseIntensity={0.01}
-        />
-      </div> */}
-      <div style={{ width: "100%", height: "100vh", position: "fixed" }}>
-        <Lightning hue={260} xOffset={0} speed={1} intensity={1} size={1} />
-      </div>
+    <div>
+      <Navbar />
 
-      {/* Content - Above background */}
-      <div className="content-wrapper">
-        <Navbar />
-        <div id="home">
+      {/* 1. Wrap Hero and LightRays in a relative container */}
+      <div id="home" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+        
+        {/* 2. Position the canvas absolutely so it sits behind the Hero */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#fe2ac9"
+            raysSpeed={0.01}
+            lightSpread={0.1}
+            rayLength={1}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0}
+            distortion={0}
+            className="custom-rays"
+            pulsating={false}
+            fadeDistance={0.81}
+            saturation={1}
+          />
+        </div>
+
+        {/* 3. Give the Hero a higher z-index to sit on top */}
+        <div style={{ position: 'relative', zIndex: 1, height: '100%' }}>
           <Hero />
         </div>
-        <AboutUs />
-        <Services />
-        <Portfolio />
-        <Team />
-        <Contact />
-        <Footer />
       </div>
+
+      {/* The rest of your components flow normally below the Hero */}
+      <AboutUs />
+      <Services />
+      <Portfolio />
+      <Team />
+      <Contact />
+      <Footer />
     </div>
   );
 }

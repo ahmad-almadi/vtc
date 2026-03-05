@@ -15,12 +15,17 @@
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.2.0",
     "@react-three/fiber": "^9.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "face-api.js": "^0.22.2",
     "framer-motion": "^12.34.0",
     "lucide-react": "^0.564.0",
+    "ogl": "^1.0.11",
     "postprocessing": "^6.38.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.182.0"
   },
   "devDependencies": {
