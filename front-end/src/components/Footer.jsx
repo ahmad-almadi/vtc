@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -20,10 +20,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: faGithub, href: '#', label: 'GitHub' },
-    { icon: faLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: faTwitter, href: '#', label: 'Twitter' },
-    { icon: faFacebook, href: '#', label: 'Facebook' }
+    { icon: faGithub, href: '', label: 'GitHub' },
+    { icon: faLinkedin, href: '', label: 'LinkedIn' },
+    { icon: faInstagram, href: 'https://www.instagram.com/vtc.web', label: 'Instagram' },
+    { icon: faFacebook, href: 'https://www.facebook.com/profile.php?id=61581585685459', label: 'Facebook' }
   ];
 
   return (
@@ -71,13 +71,13 @@ const Footer = () => {
                 <div className="flex items-center gap-2 text-gray-400">
                   <FontAwesomeIcon icon={faEnvelope} className="text-vtc-neon" />
                   <a href="mailto:info@vtc.com" className="hover:text-vtc-neon transition-colors">
-                    info@vtc.com
+                    vtc.web.co@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
                   <FontAwesomeIcon icon={faPhone} className="text-vtc-neon" />
                   <a href="tel:+1234567890" className="hover:text-vtc-neon transition-colors">
-                    +1 (234) 567-890
+                    0790191440
                   </a>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
@@ -148,6 +148,8 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-vtc-neon/20 hover:text-vtc-neon transition-all"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
