@@ -8,9 +8,13 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			'vtc-purple': '#392e4e',
-  			'vtc-neon': '#FF9FFC',
-  			'vtc-dark': '#0a0a0f',
+  			'vtc-bg': '#0A0F1E',
+  			'vtc-card': '#121A2F',
+  			'vtc-indigo': '#5B5CF6',
+  			'vtc-violet': '#7C3AED',
+  			'vtc-text': '#F5F7FF',
+  			'vtc-muted': '#9AA4B2',
+  			'vtc-border': '#242D4A',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -56,7 +60,11 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+        boxShadow: {
+            'glow': '0 0 20px rgba(91, 92, 246, 0.4)',
+            'glow-violet': '0 0 20px rgba(124, 58, 237, 0.4)',
+        }
   	}
   },
   plugins: [require("tailwindcss-animate")],

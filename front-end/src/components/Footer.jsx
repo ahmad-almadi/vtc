@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative z-10 bg-black/40 backdrop-blur-md border-t border-white/10">
+    <footer className="relative z-10 bg-vtc-card/40 backdrop-blur-md border-t border-vtc-border">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -40,48 +40,48 @@ const Footer = () => {
               className="mb-4"
             >
               <div className="flex items-center gap-3 mb-4">
-                <motion.img 
-                  src="/images/vtc-logo.avif" 
-                  alt="VTC Logo" 
+                <motion.img
+                  src="/images/logo.png"
+                  alt="VTC Logo"
                   className="w-10 h-10 rounded-full"
-                  animate={{ 
+                  animate={{
                     filter: [
-                      "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))",
-                      "drop-shadow(0 0 12px rgba(255, 159, 252, 0.7))",
-                      "drop-shadow(0 0 8px rgba(255, 159, 252, 0.5))"
+                      "drop-shadow(0 0 8px rgba(91, 92, 246, 0.5))",
+                      "drop-shadow(0 0 12px rgba(91, 92, 246, 0.7))",
+                      "drop-shadow(0 0 8px rgba(91, 92, 246, 0.5))"
                     ]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
                 <div>
-                  <div className="text-lg font-bold text-white">VTC</div>
-                  <div className="text-xs text-gray-400">Web Development</div>
+                  <div className="text-lg font-bold text-vtc-text">VTC</div>
+                  <div className="text-xs text-vtc-muted">Web Development</div>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm mb-4">
+              <p className="text-vtc-muted text-sm mb-4">
                 Crafting premium responsive websites with cutting-edge technology and pixel-perfect design.
               </p>
-              
+
               {/* Contact Info */}
               <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2 text-gray-400">
-                  <FontAwesomeIcon icon={faEnvelope} className="text-vtc-neon" />
-                  <a href="mailto:info@vtc.com" className="hover:text-vtc-neon transition-colors">
+                <div className="flex items-center gap-2 text-vtc-muted">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-vtc-indigo" />
+                  <a href="mailto:info@vtc.com" className="hover:text-vtc-indigo transition-colors">
                     vtc.web.co@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2 text-gray-400">
-                  <FontAwesomeIcon icon={faPhone} className="text-vtc-neon" />
-                  <a href="tel:+1234567890" className="hover:text-vtc-neon transition-colors">
+                <div className="flex items-center gap-2 text-vtc-muted">
+                  <FontAwesomeIcon icon={faPhone} className="text-vtc-indigo" />
+                  <a href="tel:+1234567890" className="hover:text-vtc-indigo transition-colors">
                     0790191440
                   </a>
                 </div>
-                <div className="flex items-center gap-2 text-gray-400">
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="text-vtc-neon" />
+                <div className="flex items-center gap-2 text-vtc-muted">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="text-vtc-indigo" />
                   <span>123 Tech Street, Digital City</span>
                 </div>
               </div>
@@ -95,13 +95,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-vtc-text font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-vtc-neon transition-colors inline-block"
+                    className="text-vtc-muted text-sm hover:text-vtc-indigo transition-colors inline-block"
                   >
                     {link.name}
                   </a>
@@ -117,13 +117,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-white font-semibold mb-4">Get in Touch</h3>
+            <h3 className="text-vtc-text font-semibold mb-4">Get in Touch</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-vtc-neon transition-colors inline-block"
+                    className="text-vtc-muted text-sm hover:text-vtc-indigo transition-colors inline-block"
                   >
                     {link.name}
                   </a>
@@ -134,10 +134,10 @@ const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-8 border-t border-vtc-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               className="flex gap-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -150,7 +150,7 @@ const Footer = () => {
                   aria-label={social.label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-vtc-neon/20 hover:text-vtc-neon transition-all"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-vtc-card text-vtc-muted hover:bg-vtc-indigo/20 hover:text-vtc-indigo transition-all"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -161,14 +161,14 @@ const Footer = () => {
 
             {/* Copyright */}
             <motion.div
-              className="text-gray-400 text-sm text-center md:text-right"
+              className="text-vtc-muted text-sm text-center md:text-right"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
               <p>© {currentYear} VTC. All rights reserved.</p>
               <p className="text-xs mt-1">
-                Built with <span className="text-vtc-neon">❤</span> by VTC Team
+                Built with <span className="text-vtc-indigo">❤</span> by VTC Team
               </p>
             </motion.div>
           </div>

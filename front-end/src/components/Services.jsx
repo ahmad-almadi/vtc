@@ -73,18 +73,18 @@ const Services = () => {
               whileHover={{
                 scale: 1.05,
                 rotateY: 5,
-                boxShadow: "0 20px 40px rgba(255, 159, 252, 0.3)",
+                boxShadow: "0 20px 40px rgba(91, 92, 246, 0.3)",
               }}
-              className="p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl group"
+              className="p-8 bg-vtc-card/50 backdrop-blur-md border border-vtc-border rounded-2xl group"
             >
               <motion.div>
                 <FontAwesomeIcon
                   icon={service.icon}
-                  className="w-12 h-12 text-vtc-neon mb-4"
+                  className="w-12 h-12 text-vtc-indigo mb-4"
                 />
               </motion.div>
               <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-300">{service.description}</p>
+              <p className="text-vtc-muted">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>

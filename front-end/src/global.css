@@ -17,9 +17,9 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #0a0a0f;
+  background-color: #0A0F1E;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: white;
+  color: #F5F7FF;
   overflow-x: hidden;
 }
 
@@ -51,11 +51,11 @@ h1 {
   background-image: 
     linear-gradient(
       110deg,
-      #fa4ba3 0%, 
-      #fa4ba3 45%, 
-      #ffffff 50%, 
-      #fa4ba3 55%, 
-      #fa4ba3 100%
+      #5B5CF6 0%, 
+      #5B5CF6 45%, 
+      #F5F7FF 50%, 
+      #5B5CF6 55%, 
+      #5B5CF6 100%
     );
     
   background-size: 200% auto;
@@ -82,11 +82,11 @@ h1 {
 .gradient-text {
   background: linear-gradient(
     135deg,
-    #7c3aed 0%,
-    #c084fc 25%,
-    #7c3aed 50%,
-    #c084fc 75%,
-    #7c3aed 100%
+    #5B5CF6 0%,
+    #7C3AED 25%,
+    #5B5CF6 50%,
+    #7C3AED 75%,
+    #5B5CF6 100%
   );
   background-size: 75% auto;
   -webkit-background-clip: text;
@@ -124,26 +124,26 @@ h1 {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 225 50% 8%;
+    --foreground: 228 100% 98%;
+    --card: 223 44% 13%;
+    --card-foreground: 228 100% 98%;
+    --popover: 223 44% 13%;
+    --popover-foreground: 228 100% 98%;
+    --primary: 239 89% 66%;
+    --primary-foreground: 228 100% 98%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 228 100% 98%;
+    --muted: 223 44% 13%;
+    --muted-foreground: 215 14% 65%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 228 100% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
+    --border: 226 35% 22%;
+    --input: 226 35% 22%;
+    --ring: 239 89% 66%;
+    --chart-1: 239 89% 66%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;

@@ -27,7 +27,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-black/20">
+    <section id="about" className="py-20 px-4 bg-vtc-card/30">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
@@ -40,7 +40,7 @@ const AboutUs = () => {
         </motion.h2>
 
         <motion.p
-          className="text-xl text-gray-300 text-center mb-16 max-w-3xl mx-auto"
+          className="text-xl text-vtc-muted text-center mb-16 max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -55,12 +55,12 @@ const AboutUs = () => {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-center"
+              className="p-6 bg-vtc-card/50 backdrop-blur-md border border-vtc-border rounded-xl text-center"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, borderColor: '#FF9FFC' }}
+              whileHover={{ scale: 1.05, borderColor: '#5B5CF6' }}
             >
               <motion.div
                 animate={{ 
@@ -75,11 +75,11 @@ const AboutUs = () => {
               >
                 <FontAwesomeIcon 
                   icon={value.icon} 
-                  className="w-12 h-12 text-vtc-neon mb-4 mx-auto" 
+                  className="w-12 h-12 text-vtc-indigo mb-4 mx-auto" 
                 />
               </motion.div>
               <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-              <p className="text-gray-400 text-sm">{value.description}</p>
+              <p className="text-vtc-muted text-sm">{value.description}</p>
             </motion.div>
           ))}
         </div>

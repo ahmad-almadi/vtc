@@ -21,7 +21,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-vtc-dark/90 backdrop-blur-lg border-b border-white/10 shadow-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-vtc-bg/90 backdrop-blur-lg border-b border-vtc-border shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -34,7 +34,7 @@ const Navbar = () => {
             onClick={() => setActiveSection("home")}
           >
             <motion.img
-              src="/images/vtc-logo.avif"
+              src="/images/logo.png"
               alt="VTC Logo"
               className="w-12 h-12 rounded-full"
               // animate={{
@@ -51,7 +51,7 @@ const Navbar = () => {
               // }}
             />
             <div className="hidden sm:block">
-              <div className="text-xl font-bold  bg-gradient-to-r from-vtc-neon to-purple-400 bg-clip-text text-transparent">
+              <div className="text-xl font-bold bg-gradient-to-r from-vtc-indigo to-vtc-violet bg-clip-text text-transparent">
                 VTC
               </div>
              
@@ -67,8 +67,8 @@ const Navbar = () => {
                 onClick={() => setActiveSection(link.name.toLowerCase())}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                   activeSection === link.name.toLowerCase()
-                    ? "text-vtc-neon"
-                    : "text-gray-300 hover:text-white"
+                    ? "text-vtc-indigo"
+                    : "text-vtc-muted hover:text-vtc-text"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -77,7 +77,7 @@ const Navbar = () => {
                 {activeSection === link.name.toLowerCase() && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vtc-neon to-purple-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vtc-indigo to-vtc-violet"
                     initial={false}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
@@ -89,7 +89,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="md:hidden text-vtc-text p-2 hover:bg-vtc-card/80 rounded-lg transition-colors"
             whileTap={{ scale: 0.9 }}
           >
             <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
@@ -119,8 +119,8 @@ const Navbar = () => {
                   transition={{ delay: index * 0.1 }}
                   className={`block px-4 py-3 rounded-lg transition-all ${
                     activeSection === link.name.toLowerCase()
-                      ? "bg-vtc-neon/20 text-vtc-neon border-l-4 border-vtc-neon"
-                      : "text-gray-300 hover:bg-white/5 hover:text-white"
+                      ? "bg-vtc-indigo/10 text-vtc-indigo border-l-4 border-vtc-indigo"
+                      : "text-vtc-muted hover:bg-vtc-card/50 hover:text-vtc-text"
                   }`}
                 >
                   {link.name}

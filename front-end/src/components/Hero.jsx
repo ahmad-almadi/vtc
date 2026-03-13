@@ -26,7 +26,7 @@ const Hero = () => {
           >
             <FontAwesomeIcon
               icon={faCode}
-              className="w-16 h-16 text-vtc-neon"
+              className="w-16 h-16 text-vtc-indigo"
             />
           </motion.div> */}
           <motion.h1
@@ -49,7 +49,7 @@ const Hero = () => {
         </motion.h2>
 
         <motion.p
-          className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto "
+          className="text-lg md:text-xl text-vtc-muted mb-8 max-w-2xl mx-auto "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
@@ -66,10 +66,9 @@ const Hero = () => {
         >
           <motion.a
             href="#contact"
-            className="px-8 py-4 bg-gradient-to-r from-vtc-neon to-purple-500 rounded-lg font-semibold"
+            className="px-8 py-4 bg-gradient-to-r from-vtc-indigo to-vtc-violet rounded-lg font-semibold shadow-glow hover:shadow-glow-violet transition-shadow duration-300"
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 0 20px rgba(255, 159, 252, 0.5)",
             }}
             whileTap={{ scale: 0.95 }}
           >

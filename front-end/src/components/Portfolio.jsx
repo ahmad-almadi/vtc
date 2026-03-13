@@ -124,9 +124,9 @@ const Portfolio = () => {
               whileHover={{
                 scale: 1.05,
                 // rotateZ: index % 2 === 0 ? -1 : 1,
-                boxShadow: "0 25px 50px rgba(255, 159, 252, 0.4)",
+                boxShadow: "0 25px 50px rgba(91, 92, 246, 0.4)",
               }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden"
+              className="bg-vtc-card/50 backdrop-blur-md border border-vtc-border rounded-2xl overflow-hidden"
               style={{ transformStyle: "preserve-3d" }}
             >
               <motion.div
@@ -139,7 +139,7 @@ const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                   onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/400x300/392e4e/FF9FFC?text=${project.title}`;
+                    e.target.src = `https://via.placeholder.com/400x300/121A2F/5B5CF6?text=${project.title}`;
                   }}
                 />
               </motion.div>
@@ -153,16 +153,16 @@ const Portfolio = () => {
                 >
                   {project.title}
                 </motion.h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <p className="text-vtc-muted mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.map((tech, i) => (
                     <motion.span
                       key={i}
-                      className="px-3 py-1 bg-vtc-neon/20 text-vtc-neon text-sm rounded-full"
+                      className="px-3 py-1 bg-vtc-indigo/20 text-vtc-indigo text-sm rounded-full"
                       whileHover={{
                         scale: 1.1,
-                        backgroundColor: "rgba(255, 159, 252, 0.3)",
+                        backgroundColor: "rgba(124, 58, 237, 0.3)",
                       }}
                     >
                       {tech}
@@ -176,7 +176,7 @@ const Portfolio = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-vtc-neon"
+                      className="flex items-center gap-2 text-vtc-indigo"
                       whileHover={{ scale: 1.1, x: 5 }}
                     >
                       <FontAwesomeIcon icon={faExternalLinkAlt} />
@@ -188,7 +188,7 @@ const Portfolio = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-vtc-neon"
+                      className="flex items-center gap-2 text-vtc-indigo"
                       whileHover={{ scale: 1.1, x: 5 }}
                     >
                       <FontAwesomeIcon icon={faGithub} />

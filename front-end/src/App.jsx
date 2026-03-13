@@ -24,7 +24,7 @@ function App() {
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
           <LightRays
             raysOrigin="top-center"
-            raysColor="#fe2ac9"
+            raysColor="#5B5CF6"
             raysSpeed={0.01}
             lightSpread={0.1}
             rayLength={1}

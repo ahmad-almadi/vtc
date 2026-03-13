@@ -49,7 +49,7 @@ const Contact = () => {
         
         <motion.form 
           onSubmit={handleSubmit}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8"
+          className="bg-vtc-card/50 backdrop-blur-md border border-vtc-border rounded-2xl p-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -62,7 +62,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <label className="flex items-center gap-2 text-gray-300 mb-2">
+            <label className="flex items-center gap-2 text-vtc-muted mb-2">
               <FontAwesomeIcon icon={faUser} />
               Name
             </label>
@@ -71,9 +71,9 @@ const Contact = () => {
               required
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-vtc-neon focus:outline-none transition-colors"
+              className="w-full px-4 py-3 bg-vtc-bg border border-vtc-border rounded-lg focus:border-vtc-indigo focus:ring-1 focus:ring-vtc-indigo focus:outline-none transition-colors"
               placeholder="Your name"
-              whileFocus={{ scale: 1.02, borderColor: "#FF9FFC" }}
+              whileFocus={{ scale: 1.02, borderColor: "#5B5CF6" }}
             />
           </motion.div>
 
@@ -84,7 +84,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <label className="flex items-center gap-2 text-gray-300 mb-2">
+            <label className="flex items-center gap-2 text-vtc-muted mb-2">
               <FontAwesomeIcon icon={faEnvelope} />
               Email
             </label>
@@ -93,9 +93,9 @@ const Contact = () => {
               required
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-vtc-neon focus:outline-none transition-colors"
+              className="w-full px-4 py-3 bg-vtc-bg border border-vtc-border rounded-lg focus:border-vtc-indigo focus:ring-1 focus:ring-vtc-indigo focus:outline-none transition-colors"
               placeholder="your@email.com"
-              whileFocus={{ scale: 1.02, borderColor: "#FF9FFC" }}
+              whileFocus={{ scale: 1.02, borderColor: "#5B5CF6" }}
             />
           </motion.div>
 
@@ -106,7 +106,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <label className="flex items-center gap-2 text-gray-300 mb-2">
+            <label className="flex items-center gap-2 text-vtc-muted mb-2">
               <FontAwesomeIcon icon={faCommentDots} />
               Message
             </label>
@@ -115,17 +115,17 @@ const Contact = () => {
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
               rows="5"
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-vtc-neon focus:outline-none transition-colors resize-none"
+              className="w-full px-4 py-3 bg-vtc-bg border border-vtc-border rounded-lg focus:border-vtc-indigo focus:ring-1 focus:ring-vtc-indigo focus:outline-none transition-colors resize-none"
               placeholder="Tell us about your project..."
-              whileFocus={{ scale: 1.02, borderColor: "#FF9FFC" }}
+              whileFocus={{ scale: 1.02, borderColor: "#5B5CF6" }}
             />
           </motion.div>
 
           <motion.button
             type="submit"
             disabled={status === 'sending'}
-            className="w-full px-8 py-4 bg-gradient-to-r from-vtc-neon to-purple-500 rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 159, 252, 0.5)" }}
+            className="w-full px-8 py-4 bg-gradient-to-r from-vtc-indigo to-vtc-violet rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(91, 92, 246, 0.5)" }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
