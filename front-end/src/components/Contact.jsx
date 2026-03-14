@@ -22,15 +22,20 @@ const Contact = () => {
         body: JSON.stringify(formData)
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setStatus(''), 3000);
       } else {
-        setStatus('error');
+        // Show the actual error message from backend
+        setStatus(data.error || 'Failed to send message');
+        setTimeout(() => setStatus(''), 5000);
       }
     } catch (error) {
-      setStatus('error');
+      setStatus('Network error. Please try again.');
+      setTimeout(() => setStatus(''), 5000);
     }
   };
 
@@ -146,14 +151,14 @@ const Contact = () => {
               Message sent successfully!
             </motion.p>
           )}
-          {status === 'error' && (
+          {status && status !== 'success' && status !== 'sending' && (
             <motion.p 
               className="mt-4 text-red-400 text-center"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
             >
-              Failed to send. Please try again.
+              {status}
             </motion.p>
           )}
         </motion.form>
