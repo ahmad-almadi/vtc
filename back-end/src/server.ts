@@ -8,11 +8,20 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 app.use(cors({
-  origin: 'https://vtc.up.railway.app',
+  origin: ['https://vtc.up.railway.app', 'http://localhost:5173', 'http://localhost:5174'],
   credentials: true
 }));
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Debug middleware to log all requests
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path}`);
+  console.log('Body:', req.body);
+  console.log('Headers:', req.headers);
+  next();
+});
 
 // Routes
 app.use('/api/contact', contactRoutes);
