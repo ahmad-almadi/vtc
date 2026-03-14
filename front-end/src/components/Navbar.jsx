@@ -100,11 +100,11 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden mt-4 pb-4 space-y-2 overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden mt-4 pb-4 space-y-2"
             >
               {navLinks.map((link, index) => (
                 <motion.a
@@ -114,10 +114,14 @@ const Navbar = () => {
                     setIsOpen(false);
                     setActiveSection(link.name.toLowerCase());
                   }}
-                  initial={{ x: -50, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`block px-4 py-3 rounded-lg transition-all ${
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    delay: index * 0.05,
+                    duration: 0.2,
+                    ease: [0.4, 0, 0.2, 1]
+                  }}
+                  className={`block px-4 py-3 rounded-lg transition-colors ${
                     activeSection === link.name.toLowerCase()
                       ? "bg-vtc-indigo/10 text-vtc-indigo border-l-4 border-vtc-indigo"
                       : "text-vtc-muted hover:bg-vtc-card/50 hover:text-vtc-text"

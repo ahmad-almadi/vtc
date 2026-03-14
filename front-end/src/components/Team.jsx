@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: 'Ahmad Al Madi',
+    name: 'Mohammad Alsaadi',
     role: 'CEO & Founder',
     // github: 'https://github.com/ahmadalmadi',
     // linkedin: 'https://linkedin.com/in/ahmadalmadi'
   },
   {
-    name: 'Omar Hirzallah',
+    name: 'Ali Hamdan',
     role: 'CTO & Co-Founder',
     // github: 'https://github.com/omarhirzallah',
     // linkedin: 'https://linkedin.com/in/omarhirzallah'
@@ -96,7 +96,7 @@ const Team = () => {
               <p className="text-vtc-indigo text-sm mb-4">{member.role}</p>
 
               {/* Social Links */}
-              <div className="flex justify-center gap-4">
+              {/* <div className="flex justify-center gap-4">
                 <motion.a
                   href={member.github}
                   target="_blank"
@@ -117,7 +117,7 @@ const Team = () => {
                 >
                   <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
                 </motion.a>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>

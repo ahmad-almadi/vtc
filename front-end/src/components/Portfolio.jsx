@@ -9,16 +9,17 @@ const Portfolio = () => {
     {
       id: 1,
       title: "E-Commerce Platform",
-      description: "Modern shopping experience with React & Node.js",
+      description:
+        "An immersive e-commerce experience that combines eye-catching visuals with beautifully smooth, fluid interactions.",
       techStack: ["React", "Node.js", "PostgreSQL", "Stripe"],
       imageUrl: "/images/e-commerce-proj.webp", // Place your image in public/images/
       liveUrl: "https://glamora.up.railway.app",
-      githubUrl: "https://github.com/ahmad-almadi/glamora",
+      // githubUrl: "https://github.com/ahmad-almadi/glamora",
     },
     {
       id: 2,
       title: "SaaS Dashboard",
-      description: "Analytics dashboard with real-time data",
+      description: "An intuitive SaaS dashboard experience that merges clean visuals with beautifully smooth, fluid interactions.",
       techStack: ["React", "TypeScript", "Express"],
       imageUrl: "/images/saas.webp",
       liveUrl: "https://example.com",
@@ -27,31 +28,32 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Portfolio Website",
-      description: "Interactive portfolio with captivating visuals",
+      description:
+        "A dynamic portfolio experience that merges captivating visuals with beautifully smooth, flowing animations.",
       techStack: ["html", "php", "bootstrap"],
       imageUrl: "/images/flow-proj.webp",
       liveUrl: "https://flowofpurity.com",
-      githubUrl: "https://github.com/vtc/portfolio",
+      // githubUrl: "https://github.com/vtc/portfolio",
     },
     {
       id: 4,
       title: "Portfolio Website",
       description:
-        "A modern interactive portfolio crafted with stunning visuals and smooth animations",
-      techStack: ["Next.js", "Vite", "Tailwind"],
+        "An immersive portfolio experience that blends striking visuals with beautifully smooth, fluid animations.",
+      techStack: ["Next.js", "Three.js", "Tailwind"],
       imageUrl: "/images/doctor-proj.webp",
       liveUrl: "https://doctor-fral.vercel.app",
-      githubUrl: "https://github.com/ahmad-almadi/doctor",
+      // githubUrl: "https://github.com/ahmad-almadi/doctor",
     },
     {
       id: 5,
       title: "Portfolio Website",
       description:
-        "An engaging portfolio that blends stunning visuals with smooth, fluid animations",
+        "An interactive portfolio experience that combines eye-catching visuals with beautifully smooth, fluid transitions.",
       techStack: ["Next.js", "Three.js", "Tailwind"],
       imageUrl: "/images/beauty-lounge-proj.webp",
       liveUrl: "https://beatuty-lounge-production.up.railway.app",
-      githubUrl: "https://github.com/ahmad-almadi/beauty-lounge",
+      // githubUrl: "https://github.com/ahmad-almadi/beauty-lounge",
     },
     {
       id: 6,
@@ -61,7 +63,7 @@ const Portfolio = () => {
       techStack: ["Next.js", "Three.js", "Tailwind"],
       imageUrl: "/images/dental.webp",
       liveUrl: "https://dental-one-rho.vercel.app",
-      githubUrl: "https://github.com/ahmad-almadi/dental",
+      // githubUrl: "https://github.com/ahmad-almadi/dental",
     },
   ];
 
@@ -174,7 +176,7 @@ const Portfolio = () => {
                       Live
                     </motion.a>
                   )}
-                  {project.githubUrl && (
+                  {/* {project.githubUrl && (
                     <motion.a
                       href={project.githubUrl}
                       target="_blank"
@@ -185,7 +187,7 @@ const Portfolio = () => {
                       <FontAwesomeIcon icon={faGithub} />
                       Code
                     </motion.a>
-                  )}
+                  )} */}
                 </div>
               </div>
             </motion.div>
