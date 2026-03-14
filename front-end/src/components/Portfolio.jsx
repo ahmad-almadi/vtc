@@ -25,15 +25,6 @@ const Portfolio = () => {
       githubUrl: "https://github.com/vtc/dashboard",
     },
     {
-      id: 3,
-      title: "Portfolio Website",
-      description: "Creative portfolio with stunning animations",
-      techStack: ["React", "Three.js", "Tailwind"],
-      imageUrl: "/images/portfolio-proj.webp",
-      liveUrl: "https://ahmadalmadi-portfolio.netlify.app",
-      githubUrl: "https://github.com/ahmad-almadi/Portfolio",
-    },
-    {
       id: 4,
       title: "Portfolio Website",
       description: "Interactive portfolio with captivating visuals",
