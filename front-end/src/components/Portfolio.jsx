@@ -25,7 +25,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/vtc/dashboard",
     },
     {
-      id: 4,
+      id: 3,
       title: "Portfolio Website",
       description: "Interactive portfolio with captivating visuals",
       techStack: ["html", "php", "bootstrap"],
@@ -34,7 +34,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/vtc/portfolio",
     },
     {
-      id: 5,
+      id: 4,
       title: "Portfolio Website",
       description:
         "A modern interactive portfolio crafted with stunning visuals and smooth animations",
@@ -44,7 +44,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/ahmad-almadi/doctor",
     },
     {
-      id: 6,
+      id: 5,
       title: "Portfolio Website",
       description:
         "An engaging portfolio that blends stunning visuals with smooth, fluid animations",
@@ -54,7 +54,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/ahmad-almadi/beauty-lounge",
     },
     {
-      id: 7,
+      id: 6,
       title: "Portfolio Website",
       description:
         "An interactive portfolio experience that merges eye-catching visuals with beautifully smooth, fluid animations",
