@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faPalette, faBolt } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMobileAlt, faRobot } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const services = [
@@ -10,16 +10,16 @@ const services = [
       "Full-stack solutions built with modern frameworks like React, Node.js, and TypeScript",
   },
   {
-    icon: faPalette,
-    title: "UI/UX Design",
+    icon: faMobileAlt,
+    title: "Application Development",
     description:
-      "Beautiful, intuitive interfaces that users love and convert visitors into customers",
+      "Native and cross-platform mobile apps that deliver seamless experiences across all devices",
   },
   {
-    icon: faBolt,
-    title: "Performance Optimization",
+    icon: faRobot,
+    title: "AI Automation",
     description:
-      "Lightning-fast websites optimized for speed, SEO, and exceptional user experience",
+      "Intelligent automation solutions powered by AI to streamline workflows and boost productivity",
   },
 ];
 
