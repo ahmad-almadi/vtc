@@ -1,0 +1,17 @@
+{
+  "name": "VTC Web Development",
+  "short_name": "VTC",
+  "description": "VTC designs and develops premium responsive websites, landing pages, and modern digital experiences built for speed, SEO, and conversion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1E",
+  "theme_color": "#0A0F1E",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

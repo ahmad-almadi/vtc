@@ -1,10 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { siteConfig } from "../lib/siteConfig";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4" style={{ zIndex: 10 }}>
+    <header
+      className="relative min-h-screen flex items-center justify-center px-4"
+      style={{ zIndex: 10 }}
+      aria-labelledby="hero-heading"
+    >
       <div className="max-w-6xl mx-auto text-center" style={{ position: 'relative', zIndex: 10 }}>
         <motion.div
           className="flex flex-col items-center justify-center mb-6"
@@ -12,30 +15,17 @@ const Hero = () => {
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-          {/* <motion.div
-            className="mb-4 mt-8"
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faCode}
-              className="w-16 h-16 text-vtc-indigo"
-            />
-          </motion.div> */}
           <motion.h1
+            id="hero-heading"
             className="text-6xl md:text-8xl font-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
           >
             VTC
+            <span className="mt-3 block text-2xl font-semibold md:text-4xl">
+              Web Development Agency
+            </span>
           </motion.h1>
         </motion.div>
 
@@ -45,7 +35,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Crafting Premium Responsive Websites
+          {siteConfig.heroSubtitle}
         </motion.h2>
 
         <motion.p
@@ -54,8 +44,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
-          We transform ideas into stunning digital experiences with cutting-edge
-          technology and pixel-perfect design
+          {siteConfig.heroDescription}
         </motion.p>
 
         <motion.div
@@ -87,7 +76,7 @@ const Hero = () => {
           </motion.a>
         </motion.div>
       </div>
-    </section>
+    </header>
   );
 };
 

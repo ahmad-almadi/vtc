@@ -15,3 +15,41 @@ model ContactRequest {
 
   @@map("contact_requests")
 }
+
+model Project {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  description  String   @db.Text
+  thumbnailUrl String   @db.Text
+  liveUrl      String?  @db.Text
+  githubUrl    String?  @db.Text
+  techStack    String[] @default([])
+  displayOrder Int      @default(0)
+  isPublished  Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("projects")
+}
+
+model ProjectSliderSettings {
+  id              String   @id @default(cuid())
+  key             String   @unique @default("default")
+  autoplayDelayMs Int      @default(3000)
+  pauseOnHover    Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("project_slider_settings")
+}
+
+model AdminPassword {
+  id        String   @id @default(cuid())
+  key       String   @unique @default("admin")
+  hash      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admin_passwords")
+}

@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "seo:generate": "node ./scripts/generate-seo-assets.mjs",
+    "predev": "npm run seo:generate",
+    "prebuild": "npm run seo:generate",
+    "prepreview": "npm run seo:generate",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

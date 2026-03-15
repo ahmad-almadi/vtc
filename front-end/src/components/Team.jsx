@@ -1,64 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-
-const teamMembers = [
-  {
-    name: 'Mohammad Alsaadi',
-    role: 'CEO & Founder',
-    // github: 'https://github.com/ahmadalmadi',
-    // linkedin: 'https://linkedin.com/in/ahmadalmadi'
-  },
-  {
-    name: 'Ali Hamdan',
-    role: 'CTO & Co-Founder',
-    // github: 'https://github.com/omarhirzallah',
-    // linkedin: 'https://linkedin.com/in/omarhirzallah'
-  },
-  {
-    name: 'Sarah Smadi',
-    role: 'Lead Designer',
-    // github: 'https://github.com/sarahjohnson',
-    // linkedin: 'https://linkedin.com/in/sarahjohnson'
-  },
-  {
-    name: 'Ahmad Hmoudah',
-    role: 'Full Stack Developer',
-    // github: 'https://github.com/michaelchen',
-    // linkedin: 'https://linkedin.com/in/michaelchen'
-  },
-  {
-    name: 'Mohammad Nairokh',
-    role: 'Frontend Developer',
-    // github: 'https://github.com/emmawilliams',
-    // linkedin: 'https://linkedin.com/in/emmawilliams'
-  },
-  {
-    name: 'Suhaip Abu-Zaineh',
-    role: 'Backend Developer',
-    // github: 'https://github.com/davidmartinez',
-    // linkedin: 'https://linkedin.com/in/davidmartinez'
-  },
-  {
-    name: 'Ahmad Emad',
-    role: 'UI/UX Designer',
-    // github: 'https://github.com/lisaanderson',
-    // linkedin: 'https://linkedin.com/in/lisaanderson'
-  },
-  {
-    name: 'kinda Mohammad',
-    role: 'DevOps Engineer',
-    // github: 'https://github.com/jamestaylor',
-    // linkedin: 'https://linkedin.com/in/jamestaylor'
-  }
-];
+import { teamMembers } from '../lib/siteConfig';
 
 const Team = () => {
   return (
-    <section id="team" className="py-20 px-4">
+    <section id="team" className="py-20 px-4" aria-labelledby="team-heading">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
+          id="team-heading"
           className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}

@@ -1,35 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket, faLightbulb, faUsers, faAward } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import { aboutHighlights, siteConfig } from '../lib/siteConfig';
+
+const iconMap = {
+  rocket: faRocket,
+  lightbulb: faLightbulb,
+  users: faUsers,
+  award: faAward,
+};
 
 const AboutUs = () => {
-  const values = [
-    {
-      icon: faRocket,
-      title: 'Innovation',
-      description: 'We stay ahead with cutting-edge technologies'
-    },
-    {
-      icon: faLightbulb,
-      title: 'Creativity',
-      description: 'Unique solutions for every project'
-    },
-    {
-      icon: faUsers,
-      title: 'Collaboration',
-      description: 'Working closely with our clients'
-    },
-    {
-      icon: faAward,
-      title: 'Excellence',
-      description: 'Delivering top-quality results'
-    }
-  ];
-
   return (
-    <section id="about" className="py-20 px-4 bg-vtc-card/30">
+    <section id="about" className="py-20 px-4 bg-vtc-card/30" aria-labelledby="about-heading">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
+          id="about-heading"
           className="text-4xl md:text-5xl font-bold text-center mb-8 gradient-text"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,13 +32,11 @@ const AboutUs = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          VTC is a leading web development agency specializing in creating stunning, 
-          high-performance websites that drive results. With years of experience and 
-          a passion for innovation, we transform your vision into reality.
+          {siteConfig.aboutSummary}
         </motion.p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((value, index) => (
+          {aboutHighlights.map((value, index) => (
             <motion.div
               key={index}
               className="p-6 bg-vtc-card/50 backdrop-blur-md border border-vtc-border rounded-xl text-center"
@@ -74,7 +58,7 @@ const AboutUs = () => {
                 }}
               >
                 <FontAwesomeIcon 
-                  icon={value.icon} 
+                  icon={iconMap[value.iconKey]} 
                   className="w-12 h-12 text-vtc-indigo mb-4 mx-auto" 
                 />
               </motion.div>

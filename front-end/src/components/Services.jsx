@@ -1,27 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faPalette, faBolt } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { serviceCatalog } from "../lib/siteConfig";
 
-const services = [
-  {
-    icon: faCode,
-    title: "Custom Web Development",
-    description:
-      "Full-stack solutions built with modern frameworks like React, Node.js, and TypeScript",
-  },
-  {
-    icon: faPalette,
-    title: "UI/UX Design",
-    description:
-      "Beautiful, intuitive interfaces that users love and convert visitors into customers",
-  },
-  {
-    icon: faBolt,
-    title: "Performance Optimization",
-    description:
-      "Lightning-fast websites optimized for speed, SEO, and exceptional user experience",
-  },
-];
+const iconMap = {
+  code: faCode,
+  palette: faPalette,
+  bolt: faBolt,
+};
 
 const Services = () => {
   const containerVariants = {
@@ -47,9 +33,10 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 px-4">
+    <section id="services" className="py-20 px-4" aria-labelledby="services-heading">
       <div className="max-w-6xl mx-auto">
         <motion.h2
+          id="services-heading"
           className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +53,7 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {services.map((service, index) => (
+          {serviceCatalog.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -79,7 +66,7 @@ const Services = () => {
             >
               <motion.div>
                 <FontAwesomeIcon
-                  icon={service.icon}
+                  icon={iconMap[service.iconKey]}
                   className="w-12 h-12 text-vtc-indigo mb-4"
                 />
               </motion.div>
