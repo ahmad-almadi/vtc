@@ -23,8 +23,8 @@ const Hero = () => {
             transition={{ delay: 1.3 }}
           >
             VTC
-            <span className="mt-3 block text-2xl font-semibold md:text-4xl">
-              Web Development Agency
+            <span className="mt-3 block text-2xl font-semibold md:text-4xl pb-2">
+              {siteConfig.heroTitle}
             </span>
           </motion.h1>
         </motion.div>

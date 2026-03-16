@@ -53,13 +53,13 @@ export const aboutHighlights = [
 export const serviceCatalog = [
   {
     iconKey: "code",
-    title: "Custom Web Development",
+    title: "Websites & Web Apps",
     description:
-      "Custom business websites, landing pages, and scalable web apps built with modern frameworks and clean architecture.",
+      "Custom business websites, landing pages, and scalable web apps built for performance, usability, and growth.",
   },
   {
     iconKey: "smartphone",
-    title: "Mobile Application",
+    title: "Mobile Apps",
     description:
       "Custom mobile apps built for speed, usability, and seamless experiences across iOS and Android.",
   },
@@ -97,36 +97,36 @@ export const socialProfiles = [
 
 export const siteConfig = {
   name: "VTC",
-  legalName: "VTC Web Development",
+  legalName: "VTC Digital Solutions",
   shortName: "VTC",
   titleTemplate: "%s | VTC",
-  defaultTitle: "VTC | Premium Responsive Web Development Agency",
+  defaultTitle: "VTC | Digital Solutions Agency",
   description:
-    "VTC designs and develops premium responsive websites, landing pages, and modern digital experiences built for speed, SEO, and conversion.",
-  heroTitle: "VTC Web Development Agency",
+    "VTC is a digital solutions agency providing custom websites, mobile apps, and AI automation built for performance, growth, and conversion.",
+  heroTitle: "Digital Solutions Agency",
   heroSubtitle:
-    "Premium Responsive Websites Built for Speed, SEO, and Conversion",
+    "Websites, Mobile Apps, and AI Automation Built for Growth",
   heroDescription:
-    "We design and develop custom websites, landing pages, and digital experiences that load fast, look polished, and turn visitors into leads.",
+    "We design and build custom websites, mobile applications, and AI automation solutions that look polished, perform fast, and help businesses grow.",
   aboutSummary:
-    "VTC is a web development agency focused on responsive websites, landing pages, and high-performance digital experiences that help modern brands look credible and convert better online.",
+    "VTC is a digital solutions agency focused on websites, mobile apps, and AI automation that help modern brands grow faster and operate more efficiently.",
   portfolioSummary:
     "Recent work across e-commerce, SaaS, healthcare, wellness, and service businesses built with performance and presentation in mind.",
   contactHeading: "Let's Build Something Amazing",
   contactDescription:
-    "Share your goals and we will help plan a fast, polished website or digital product experience around them.",
+    "Share your goals and we will help plan the right website, mobile app, or AI automation solution for your business.",
   locale: "en_US",
   language: "en",
   themeColor: "#0A0F1E",
   keywords: [
-    "web development agency",
-    "responsive website design",
-    "custom website development",
-    "landing page development",
-    "UI UX design",
-    "performance optimization",
-    "SEO-friendly websites",
-    "React development agency",
+    "digital solutions agency",
+    "website development",
+    "mobile app development",
+    "AI automation",
+    "custom websites",
+    "business websites",
+    "web apps",
+    "digital transformation",
   ],
   contact: {
     email: "vtc.web.co@gmail.com",
