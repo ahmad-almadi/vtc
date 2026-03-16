@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faCpu, faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faMicrochip, faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { serviceCatalog } from "../lib/siteConfig";
 
 const iconMap = {
   code: faCode,
   smartphone: faMobileScreenButton,
-  cpu: faCpu,
+  cpu: faMicrochip,
 };
 
 const Services = () => {
