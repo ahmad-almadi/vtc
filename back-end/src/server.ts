@@ -9,6 +9,19 @@ import uploadRoutes from './routes/upload.routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const defaultAllowedOrigins = [
+  'https://virtualtech.site',
+  'https://www.virtualtech.site',
+  'https://vtc.up.railway.app',
+  'http://localhost:5173',
+  'http://localhost:5174',
+];
+const allowedOrigins = (
+  process.env.CORS_ORIGINS
+    ?.split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean) ?? defaultAllowedOrigins
+);
 
 const summarizeRequestBody = (body: Record<string, unknown> | undefined) => {
   if (!body) {
@@ -30,12 +43,21 @@ const summarizeRequestBody = (body: Record<string, unknown> | undefined) => {
   );
 };
 
-app.use(
-  cors({
-    origin: ['https://vtc.up.railway.app', 'http://localhost:5173', 'http://localhost:5174'],
-    credentials: true,
-  }),
-);
+const corsOptions: cors.CorsOptions = {
+  origin(origin, callback) {
+    // Allow server-to-server requests and approved browser origins.
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error(`Origin ${origin} is not allowed by CORS`));
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
